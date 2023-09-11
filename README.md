@@ -1,12 +1,12 @@
 ## AWS Sample: 
 
-GenAI experimentation has been primarily with Large Langague Models (LLMs). With GenAI, it is also relatively simple to use Diffusion Models for Multimodal image synthesis.
+GenAI experimentation has been primarily with Large Language Models (LLMs). With GenAI, it is also relatively simple to use Diffusion Models for Multimodal image synthesis.
 
-This example uses Streamlit and Stable Diffusion XL to showcase a simple and intuitive user-interface. User provides an input image & some text to help guide generation of on output-image.  
+This example uses Streamlit and Stable Diffusion XL to showcase a simple and intuitive user-interface. User provides an input image & some text to help guide generation of an output-image.  
 
 Key features of this sample:
 * Synthesise image using text-only prompt[s]
-* Synthesies image using a mix of input-image and text prompt[s]
+* Synthesise image using a mix of input-image and text prompt[s]
 * Control the input-image strength towards the final output-image
 * Generate/re-generate images on the fly
 * Streamlit allows the App to be used on smart-phones and many other devices
@@ -38,7 +38,7 @@ Admin:~/environment/amazon-aiml-genai-streamlit-stable-diffusion (main) $ source
 (.venv) Admin:~/environment/amazon-aiml-genai-streamlit-stable-diffusion (main) $ pip install -r requirements.txt
 ```
 
-Create a directory and file to store global password for the steamlit application:
+Create a directory and file to store global password for the streamlit application:
 ```
 Admin:~/environment/amazon-aiml-genai-streamlit-example (main) $ less .streamlit/secrets.toml
 

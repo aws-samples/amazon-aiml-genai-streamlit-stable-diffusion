@@ -37,10 +37,11 @@ def s3_uploader(checkbox, filename, filebytes):
 
 some_prompts = {
     "default" : "Type or Select prompt. Something like - pencil sketch of pizza and some cake",
-    "prompt-1": "Portrait photo side profile, looking away, serious eyes, 50mm portrait photography, hard rim lighting photography–beta –ar 2:3 –beta –upbeta –upbeta",
-    "prompt-2": "High Quality, Intricately Detailed, Hyper-Realistic Lawyer Portrait Photography, Volumetric Lighting, Full Character, 4k, In Workwear, boca",
-    "prompt-3": "Street style photo portrait, clear edge definition, unique and one-of-a-kind pieces, light brown and light amber, Fujifilm X-T4, Sony FE 85mm f/1.4 GM, —quality 2 —s 750 —v 5.2",
-    "prompt-4": "a person in 8k resolution, photorealistic masterpiece by Aaron Horkey and Jeremy Mann, intricately detailed fluid gouache painting by Jean Baptiste, professional photography, natural lighting, volumetric lighting, maximalist, concept art, intricately detailed, complex, elegant, expansive cover"
+    "prompt-1": "a person in 8k resolution, photorealistic masterpiece by Aaron Horkey and Jeremy Mann, intricately detailed fluid gouache painting by Jean Baptiste, professional photography, natural lighting, volumetric lighting, maximalist, concept art, intricately detailed, complex, elegant, expansive cover",
+    "prompt-2": "anime style",
+    "prompt-3": "Portrait photo side profile, looking away, serious eyes, 50mm portrait photography, hard rim lighting photography–beta –ar 2:3 –beta –upbeta",
+    "prompt-4": "High Quality, Intricately Detailed, Hyper-Realistic Lawyer Portrait Photography, Volumetric Lighting, Full Character, 4k, In Workwear, boca",
+    "prompt-5": "Street style photo portrait, clear edge definition, unique and one-of-a-kind pieces, light brown and light amber, Fujifilm X-T4, Sony FE 85mm f/1.4 GM, —quality 2 —s 750 —v 5.2",
 }
 
 # Perform some crude state management
@@ -95,17 +96,17 @@ if gen_img:
     # placeholder for outputs
     outs = st.empty().container()
     checkbox = outs.checkbox("Upload for printing", value=True, key="checkbox")
-    filename = outs.text_input("Image name (add .jpg)", key="filename")
+    filename = outs.text_input("Image name:", key="filename")
     
     # Check if the filename already exists
-    if filename and checkbox and glib.checkFileinS3(filename):
+    if filename and checkbox and glib.checkFileinS3(filename+".jpg"):
         filename = ''
         st.error("File already exists")
     
     outs.download_button(label="Download",
         data=img_bytes, 
-        file_name=filename,
+        file_name=filename+".jpg",
         mime="image/jpg",
         disabled=not filename,
         on_click=s3_uploader, 
-        args=[checkbox, filename, img_bytes])
+        args=[checkbox, filename+".jpg", img_bytes])

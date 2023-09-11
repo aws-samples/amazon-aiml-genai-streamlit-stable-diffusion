@@ -16,6 +16,7 @@ Key features of this sample:
 ## Getting Started
 1. Using SageMaker Jumpstart (Studio) deploy Stable Diffusion XL 1.0 model. Take a note of the endpoint-name (for example sdxl-jumpstart)
 2. It is recommended to use a Cloud9 environment as it comes bundled with AWS CLI pre-installed. Create a Cloud9 environment
+3. Streamlit runs on port 8501 by default, allow this in Security-Group associated with Cloud9 instance
 
 Once the Cloud9 environment is setup, this example requires at least python 3.8. To install python 3.8:
 ```

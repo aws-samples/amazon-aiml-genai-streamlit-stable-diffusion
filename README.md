@@ -27,7 +27,7 @@ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
 
 Clone the sample repository:
 ```
-'git clone https://github.com/aws-samples/amazon-aiml-genai-streamlit-stable-diffusion.git'
+git clone https://github.com/aws-samples/amazon-aiml-genai-streamlit-stable-diffusion.git
 ```
 
 Download libraries & setup a virtual environment so all python dependencies are stored within project directory:

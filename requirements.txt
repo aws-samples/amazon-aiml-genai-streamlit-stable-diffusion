@@ -7,6 +7,6 @@ Pillow
 pypdf
 langchain
 streamlit
-urllib3==1.26.6
+urllib3==1.26.18
 stability-sdk[sagemaker] @ git+https://github.com/Stability-AI/stability-sdk.git@sagemaker
 python-resize-image
